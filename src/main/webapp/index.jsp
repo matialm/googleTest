@@ -8,6 +8,6 @@
 	<body>
 		<h2>Hello World!</h2>
 		<button id="authorize-button">Authorize</button>	
-		<div id='content'></div>
+		<div id="content"></div>
 	</body>
 </html>

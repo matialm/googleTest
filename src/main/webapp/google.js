@@ -1,6 +1,6 @@
 var clientId = '592277374552.apps.googleusercontent.com';
 var apiKey = 'AIzaSyDzNmn7AtXYnZE2c0KCoMUA7fj7FxwqJzE';
-var scopes = 'https://www.googleapis.com/auth/userinfo.email';
+var scopes = 'https://mail.google.com';
 
 
 function handleClientLoad() {
@@ -14,9 +14,10 @@ function checkAuth() {
 
 function handleAuthResult(authResult) {
   var authorizeButton = document.getElementById('authorize-button');
+  
   if (authResult && !authResult.error) {
-    authorizeButton.style.visibility = 'hidden';
-    makeApiCall();
+    //authorizeButton.style.visibility = 'hidden';
+    //makeApiCall();
   } else {
     authorizeButton.style.visibility = '';
     authorizeButton.onclick = handleAuthClick;
@@ -38,7 +39,7 @@ function makeApiCall() {
 	          var image = document.createElement('img');
 	          image.src = resp.image.url;
 	          heading.appendChild(image);
-	          heading.appendChild(document.createTextNode(resp.displayName));
+	          heading.appendChild(document.createTextNode(resp.mail));
 
 	          document.getElementById('content').appendChild(heading);
 	        });
